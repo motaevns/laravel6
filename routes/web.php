@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/csv-import', 'Import\CsvImportController@import');
+Route::get('/txt-import', 'Import\TxtImportController@import');

@@ -80,14 +80,25 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
+                @if (isset($method))
+                    <div class="title m-b-md">
+                        {{$method}}
+                    </div>
+                @else
+                    <div class="title m-b-md">
+                        Laravel
+                    </div>
+                @endif
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Strategy Import CSV</a>
-                    <a href="https://laracasts.com">Strategy Import Txt</a>
-                    <a href="https://laravel-news.com">Both Strategy Import</a>
+                    <a href="{{ url('/csv-import') }}">Strategy Import CSV</a>
+                    <a href="{{ url('/txt-import') }}">Strategy Import Txt</a>
+                </div>
+
+                <div>
+                    @if (isset($importResult))
+                        {{ dd($importResult) }}
+                    @endif
                 </div>
             </div>
         </div>
